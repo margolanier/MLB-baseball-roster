@@ -1,7 +1,7 @@
 {% extends "base.html"%}
 
 {% block content %}
-		<p>This is the home view.</p>
+		<h1>Home view.</h1>
 		{% for team in teams %}
 		<a href="{% url 'team' team.id %}">MLB Baseball</a>
 		{%endfor%}

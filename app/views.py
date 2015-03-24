@@ -1,18 +1,15 @@
-from django.db import HttpResponse
-
-def home(request):
-    return HttpResponse('Hello World!')
+#FILE: roster/views.py
+from django.shortcuts import render, get_object_or_404
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
-
-from django.http import HttpResponse
-from django.shortcuts import render, get_object_or_404
-from baseball.models import Team, Player
+from django.shortcuts import render
+from app.models import Team, Player
 
 
 def home(request):
 	team = Team.objects.all()
-	return render(request, "baseball/home.html", {'team':team})
+	return render(request, "app/home.html", {'team':team})
 
 def team(request, pk):
 	team = get_object_or_404(Team, id=pk)

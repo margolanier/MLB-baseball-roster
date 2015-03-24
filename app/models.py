@@ -16,16 +16,17 @@ class Team(models.Model):
 #Player Model
 class Player(models.Model):
 	name = models.CharField(max_length=50)
+	image = models.TextField()
 	number = models.IntegerField(unique=True)
 	batsthrows = models.CharField (max_length=50)
 	height = models.CharField (max_length=50)
 	weight = models.CharField (max_length=50)
 	birthday = models.CharField (max_length=50)
 
-	team = models.ForeignKey('Team', related_name='players')
+	team = models.ForeignKey('Team', related_name='Player')
 
 	class Meta(object):
-		ordering = ('number', 'name')
+		ordering = ('number', 'name',)
 
 	def __unicode__(self):
 		return u'%s %s' %(self.name, self.number)
