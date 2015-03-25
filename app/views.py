@@ -11,16 +11,16 @@ def home(request):
 	team = Team.objects.all()
 	return render(request, "app/home.html", {'team':team})
 
-def team(request, pk):
-	team = get_object_or_404(Team, id=pk)
+def team(request, team_pk):
+	team = get_object_or_404(Team, id=team_pk)
 	players = team.players.all()
 	return render(request, "baseball/team.html", {
 		'team': team, 
 		'player':player
 	})
 
-def player(request, pk):
-	player = get_object_or_404(Player, id=pk)
-	return render(request, "basketball/player.html", {'player':player})
+def player(request, player_pk):
+	player = get_object_or_404(Player, id=player_pk)
+	return render(request, "baseball/player.html", {'player':player})
 
 

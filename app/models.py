@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 
@@ -16,12 +17,13 @@ class Team(models.Model):
 #Player Model
 class Player(models.Model):
 	name = models.CharField(max_length=50)
-	image = models.TextField()
 	number = models.IntegerField(unique=True)
+	position = models.CharField (max_length=50)
 	batsthrows = models.CharField (max_length=50)
 	height = models.CharField (max_length=50)
-	weight = models.CharField (max_length=50)
-	birthday = models.CharField (max_length=50)
+	weight = models.IntegerField(max_length=3, null=True)
+	birthday = models.DateField(default=timezone.now)
+	image = models.CharField (max_length=300, default='')
 
 	team = models.ForeignKey('Team', related_name='Player')
 

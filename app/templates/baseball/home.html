@@ -1,9 +1,15 @@
 {% extends "base.html"%}
+{% load humanize %}
 
 {% block content %}
-		<h1>Home view.</h1>
-		{% for team in teams %}
-		<a href="{% url 'team' team.id %}">MLB Baseball</a>
-		{%endfor%}
+	<h1>Home view.</h1>
+	<p>There are  {{ player_count|intcomma }} players on {{ team_count|intcomma }} teams.</p>
+	<a href="{% url 'roster_course_list' %}">List of Teams</a>
+	<a href="{% url 'roster_student_list' %}">List of Players</a>
+
+
+	{% for team in teams %}
+	<a href="{% url 'team' team.id %}">MLB Baseball</a>
+	{%endfor%}
 		
 {% endblock %}
