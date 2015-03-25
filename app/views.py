@@ -9,8 +9,18 @@ from app.models import Team, Player
 
 def home(request):
 	team = Team.objects.all()
-	return render(request, "app/home.html", {'team':team})
+	context = {
+		'player_count': Player.objects.count(),
+		'team_count': Team.objects.count(),
+	}
+	return render(request, "baseball/home.html", {'team':team})
 
+# list of all teams
+def teamList(request):
+    teams = Team.objects.all()
+    return render(request, 'baseball/teams.html', {'teams': teams})
+
+# single team page
 def team(request, team_pk):
 	team = get_object_or_404(Team, id=team_pk)
 	players = team.players.all()
@@ -19,6 +29,12 @@ def team(request, team_pk):
 		'player':player
 	})
 
+# list of all players
+def playerList(request):
+    players = Player.objects.all()
+    return render(request, 'baseball/players.html', {'players': players})
+
+# single player page
 def player(request, player_pk):
 	player = get_object_or_404(Player, id=player_pk)
 	return render(request, "baseball/player.html", {'player':player})
