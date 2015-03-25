@@ -5,7 +5,13 @@ from django.utils import timezone
 
 #Team Model
 class Team(models.Model):
-	name = models.CharField(unique=True, max_length=50)
+	name = models.CharField(max_length=50)
+	championships = models.IntegerField(null=True)
+	hometown = models.CharField(max_length=50, default='')
+	ballpark = models.CharField(max_length=50, default='')
+	manager = models.CharField(max_length=50, default='')
+	owner = models.CharField(max_length=50, default='')
+	logo = models.CharField (max_length=300, default='')
 
 	class Meta(object):
 		verbose_name_plural = "Teams"
@@ -25,7 +31,7 @@ class Player(models.Model):
 	birthday = models.DateField(default=timezone.now)
 	image = models.CharField (max_length=300, default='')
 
-	team = models.ForeignKey('Team', related_name='Player')
+	team = models.ForeignKey('Team', related_name='players')
 
 	class Meta(object):
 		ordering = ('number', 'name',)

@@ -3,9 +3,10 @@
 {% block content %}
 	<h1>Home view.</h1>
 	<p>There are  {{ player_count }} players on {{ team_count }} teams.</p>
-	<a href="{% url 'app_teams' %}">List of Teams</a>
-	<a href="{% url 'app_players' %}">List of Players</a>
-
+	<ul>
+		<li><a href="{% url 'app_teams' %}">List of Teams</a></li>
+		<li><a href="{% url 'app_players' %}">List of Players</a></li>
+	</ul>
 
 	{% for team in teams %}
 	<a href="{% url 'team' team.id %}">MLB Baseball</a>

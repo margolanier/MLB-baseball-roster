@@ -3,8 +3,8 @@
 {% block content %}
     <h2>List of Players</h2>
     <ul>
-        {% for player in player %}
-            <li><a href="{{ player.id }}">{{ player.name }}</a> | {{ player.number }}</li>
+        {% for player in players %}
+            <li><a href="{% url 'player' player.id %}">{{ player.name }}</a> | {{ player.number }}</li>
         {% endfor %}
     </ul>
 {% endblock %}

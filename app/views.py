@@ -9,11 +9,11 @@ from app.models import Team, Player
 
 def home(request):
 	team = Team.objects.all()
-	context = {
+	return render(request, "baseball/home.html", {
+		'team':team,
 		'player_count': Player.objects.count(),
 		'team_count': Team.objects.count(),
-	}
-	return render(request, "baseball/home.html", {'team':team})
+	})
 
 # list of all teams
 def teamList(request):

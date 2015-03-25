@@ -2,10 +2,13 @@
 
 {% block content %}
 <h1>Team view.</h1>
-    <h1>Players</h1>
-    <ul>
-        {% for player in players %}
-            <li>{{player.number }} -- <a href="{% url 'player' player.id %}">{{ player.name }}</a></li>
-        {% endfor %}
+<h1>{{team.name}}</h1>
+<img src="{{team.logo}}" alt="{{team.name}}" />
+    <ul> 
+    	<li>World Series Championships: {{team.championships}}</li>
+    	<li>Hometown: {{team.hometown}}</li>
+    	<li>Ballpark: {{team.ballpark}}</li>
+    	<li>Manager: {{team.manager}}</li>
+    	<li>Owner: {{team.owner}}</li>
     </ul>
 {% endblock %}
