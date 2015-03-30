@@ -3,12 +3,11 @@
 {% block content %}
 <h1>Team view.</h1>
 <h1>{{team.name}}</h1>
-<img src="{{team.logo}}" alt="{{team.name}}" />
+<img src="{{team.logo}}" alt="{{team.name}}" width="300"/>
     <ul> 
     	<li>World Series Championships: {{team.championships}}</li>
     	<li>Hometown: {{team.hometown}}</li>
     	<li>Ballpark: {{team.ballpark}}</li>
     	<li>Manager: {{team.manager}}</li>
-    	<li>Owner: {{team.owner}}</li>
     </ul>
 {% endblock %}

@@ -10,7 +10,6 @@ class Team(models.Model):
 	hometown = models.CharField(max_length=50, default='')
 	ballpark = models.CharField(max_length=50, default='')
 	manager = models.CharField(max_length=50, default='')
-	owner = models.CharField(max_length=50, default='')
 	logo = models.CharField (max_length=300, default='')
 
 	class Meta(object):
