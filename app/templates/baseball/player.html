@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-	<h1>Player view.</h1>
-    <h1>{{player.name}}</h1>
-    <img src="{{player.image}}" alt="{{player.name}}" />
+<div class="col-md-4 col-sm-12">
+    <h2>{{player.name}}</h2>
+    <div class="player-img"><img src="{{player.image}}" alt="{{player.name}}" /></div>
+</div>
+<div class="col-md-8 col-sm-12">
     <ul>
     	<li>Number: {{player.number}}</li>
     	<li>Position: {{player.position}}</li> 
@@ -12,6 +14,7 @@
     	<li>Weight: {{player.weight}}</li>
     	<li>Date of Birth: {{player.birthday}}</li>
     </ul>
+</div>
 
     
 
