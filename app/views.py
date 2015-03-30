@@ -4,12 +4,14 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
 from django.shortcuts import render
-from app.models import Team, Player
+from app.models import League, Team, Player
 
 
 def home(request):
+	league = League.objects.all()
 	team = Team.objects.all()
 	return render(request, "baseball/home.html", {
+		'league': league,
 		'team':team,
 		'player_count': Player.objects.count(),
 		'team_count': Team.objects.count(),

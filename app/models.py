@@ -3,14 +3,29 @@ from django.utils import timezone
 
 # Create your models here.
 
+#League Model
+class League(models.Model):
+	name = models.CharField(max_length=50, null=True)
+	logo = models.CharField (max_length=300,  null=True)
+
+	class Meta(object):
+		verbose_name_plural = "Leagues"
+		ordering = ('name',)
+
+	def __unicode__(self):
+		return self.name
+
 #Team Model
 class Team(models.Model):
 	name = models.CharField(max_length=50)
 	championships = models.IntegerField(null=True)
-	hometown = models.CharField(max_length=50, default='')
-	ballpark = models.CharField(max_length=50, default='')
-	manager = models.CharField(max_length=50, default='')
+	hometown = models.CharField(max_length=50, null=True, default='')
+	ballpark = models.CharField(max_length=50, null=True, default='')
+	manager = models.CharField(max_length=50, null=True, default='')
 	logo = models.CharField (max_length=300, default='')
+	linkToRoster = models.CharField (max_length=300, default='')
+
+	league = models.ForeignKey('League', related_name='teams', null=True)
 
 	class Meta(object):
 		verbose_name_plural = "Teams"
@@ -26,7 +41,7 @@ class Player(models.Model):
 	position = models.CharField (max_length=50)
 	batsthrows = models.CharField (max_length=50)
 	height = models.CharField (max_length=50)
-	weight = models.IntegerField(max_length=3, null=True)
+	weight = models.IntegerField(max_length=3)
 	birthday = models.DateField(default=timezone.now)
 	image = models.CharField (max_length=300, default='')
 

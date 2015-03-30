@@ -1,14 +1,11 @@
 
 body {
 	padding: 70px;
+	background: url('{% static 'stadium.jpg' %}');
 }
 
 .center {
 	text-align: center;
-}
-
-.player-img {
-	width: 100%;
 }
 
 /* Striped List */
