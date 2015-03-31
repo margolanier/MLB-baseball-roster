@@ -7,11 +7,18 @@
 
 {% block content %}
 	<h1 class="title">America's Favorite Pasttime</h1>
-	<p>There are  {{ player_count }} players on {{ team_count }} teams.</p>
-	<ul>
-		<li><a href="{% url 'app_teams' %}">List of Teams</a></li>
-		<li><a href="{% url 'app_players' %}">List of Players</a></li>
-	</ul>
+	<div class="row league hidden-sm hidden-xs">
+		<div class="col-sm-6">
+			<img src="static/img/american-league.png">
+		</div>
+		<div class="col-sm-6 greyscale">
+			<a href="{% url 'app_teams' %}" alt="national league"><img src="static/img/national-league.png"></a>
+		</div>
+	</div>
+
+	<div class="row greyscale league-sm hidden-md hidden-lg hidden-xl">
+		<a href="{% url 'app_teams' %}" alt="national league"><img src="static/img/national-league.png"></a>
+	</div>
 
   
 		

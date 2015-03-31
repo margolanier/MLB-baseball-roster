@@ -34,5 +34,25 @@ body::after {
 	color: white;
 }
 
+.league {
+	margin-top: 4em;
+	display: inline-flex;
+}
+
+.league img {
+	width: 80%;
+}
+
+.league-sm img {
+	margin-top: 6em;
+	width: 60%;
+	max-width: 250px;
+}
+
+.greyscale:hover, .greyscale:focus, .greyscale:active {
+	filter: gray; /* IE6-9 */
+ 	filter: grayscale(1); /* Firefox 35+ */
+ 	-webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+}
 
 

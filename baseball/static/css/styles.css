@@ -58,14 +58,20 @@ body::after {
 	list-style: none;
 }
 
-.striped-list>li {
+.striped-list > li {
 	border-top: 1px solid #e5e5e5;
 	padding-left: 0;
 	margin-left: -40px;
 }
 
-.striped-list>li:nth-of-type(odd) {
+.striped-list > li:nth-of-type(odd) {
 	background: #fafafa;
+}
+
+.striped-list > li:hover, .striped-list > li:focus, .striped-list > li:active {
+	filter: gray; /* IE6-9 */
+ 	filter: grayscale(1); /* Firefox 35+ */
+ 	-webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
 }
 
 /* misc */
