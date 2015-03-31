@@ -18,10 +18,6 @@ class League(models.Model):
 #Team Model
 class Team(models.Model):
 	name = models.CharField(max_length=50)
-	championships = models.IntegerField(null=True)
-	hometown = models.CharField(max_length=50, null=True, default='')
-	ballpark = models.CharField(max_length=50, null=True, default='')
-	manager = models.CharField(max_length=50, null=True, default='')
 	logo = models.CharField (max_length=300, default='')
 	linkToRoster = models.CharField (max_length=300, default='')
 

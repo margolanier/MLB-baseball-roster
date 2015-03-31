@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h2>List of Players</h2>
-    <ul>
+    <h2>Atlanta Braves Roster</h2>
+    <ul class="striped-list">
         {% for player in players %}
-            <li><a href="{% url 'player' player.id %}">{{ player.name }}</a> | {{ player.number }}</li>
+            <li><a href="{% url 'player' player.id %}"><div class="number-icon">{{ player.number }}</div>{{ player.name }}</a></li>
         {% endfor %}
     </ul>
 {% endblock %}

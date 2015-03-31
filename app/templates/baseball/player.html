@@ -1,18 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-	<h1>Player view.</h1>
-    <h1>{{player.name}}</h1>
-    <img src="{{player.image}}" alt="{{player.name}}" />
-    <ul>
-    	<li>Number: {{player.number}}</li>
-    	<li>Position: {{player.position}}</li> 
-    	<li>B/T: {{player.batsthrows}}</li>
-    	<li>Height: {{player.height}}</li>
-    	<li>Weight: {{player.weight}}</li>
-    	<li>Date of Birth: {{player.birthday}}</li>
-    </ul>
-
-    
+    <h2>{{player.name}}</h2>
+    <div class="row">
+        <div class="col-md-5 col-sm-12">
+            <img src="{{player.image}}" alt="{{player.name}}" class="player" />
+        </div>
+        <div class="col-md-7 col-sm-12">
+            <ul>
+            	<li>Number: {{player.number}}</li>
+            	<li>Position: {{player.position}}</li> 
+            	<li>B/T: {{player.batsthrows}}</li>
+            	<li>Height: {{player.height}}</li>
+            	<li>Weight: {{player.weight}}</li>
+            	<li>Date of Birth: {{player.birthday}}</li>
+            </ul>
+        </div>
+    </div>
 
 {% endblock content %}

@@ -1,12 +1,38 @@
 
+@font-face {
+    font-family: 'marcelle';
+    src: url('../fonts/marcelle/marcelle.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body::after {
   content: "";
-  background: url(../img/ballpark.jpg);
-  opacity: 0.4;
+  background: url(http://thecheatsmovement.com/wp-content/uploads/2011/06/dscn0848.jpg) center;
+  opacity: 0.7;
   top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;   
+  position: fixed;
+  z-index: -1;
+  background-size: cover;
+  float: center;
 }
+
+.main-div {
+	background: transparent;
+	border: none;
+	text-align: center;
+}
+
+.title {
+	font-family: 'marcelle', cursive;
+	font-size: 3.3em;
+	position: absolute;
+	bottom: 15%;
+	left: 20px;
+	right: 20px;
+	text-align: center;
+	color: white;
+}
+
+
+
