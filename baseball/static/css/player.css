@@ -1,0 +1,55 @@
+
+body::after {
+  content: "";
+  background: url(http://4.bp.blogspot.com/-6DpnPTKkzpQ/UKjNwBawqSI/AAAAAAAAEHU/5wYc3fZ6fYs/s1600/HD-baseball-black-and-white-pictures-0007.jpg) center;
+  opacity: 0.5;
+  top: 0;
+  position: fixed;
+  z-index: -1;
+  background-size: cover;
+  float: center;
+}
+
+.main-div {
+	background: transparent;
+	border: none;
+	text-align: center;
+}
+
+.scoreboard {
+  content: "";
+  background: url(../img/scoreboard.png);
+  width: 400px;
+  height: 350px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-top: 85px;
+  margin: auto;
+}
+
+@media screen and (max-width: 450px) {
+  .scoreboard {
+    width: 200px;
+    padding-top: 50px;
+  }
+
+@media screen and (max-width: 555px) {
+  .scoreboard {
+    width: 270px;
+    padding-top: 50px;
+  }
+  .scoreboard-text {
+    display: none;
+  }
+  h3 {
+    margin-top: 0px;
+  }
+}
+
+@media screen and (min-width: 450px) {
+  .scoreboard-text-mobile {
+    display: none;
+  }
+}
+
+

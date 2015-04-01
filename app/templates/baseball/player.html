@@ -1,32 +1,59 @@
 {% extends 'base.html' %}
 {% load static from staticfiles %}
 
-{% block sidebar %}
-<div class="row text-center">
-    <img src="{{player.image}}" alt="{{player.name}}" class="player" />
-    <h2>{{player.name}}</h2>
+{% block extra-styles %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/player.css' %}" />
+{% endblock %}
+
+
+{% block content %}
+<div class="row center">
+    <img src="{{player.image}}" alt="{{player.name}}"<br />
+    <div class="player-number">{{player.number}}</div><div class="player-name">{{player.name}}</div>
+    <div class="scoreboard">
+        <div class="scoreboard-text">
+            <div class="col-xs-3">
+                <h4>Position</h4>
+                <h3>{{player.position}}</h3>
+            </div>
+            <div class="col-xs-3">
+                <h4>Hand</h4>
+                <h3>{{player.batsthrows}}</h3>
+            </div>
+            <div class="col-xs-3">
+                <h4>Height</h4>
+                <h3>{{player.height}}</h3>
+            </div>
+            <div class="col-xs-3">
+                <h4>Weight</h4>
+                <h3>{{player.weight}}</h3>
+            </div>
+        </div>
+
+        <div class="scoreboard-text-mobile hidden-md hidden-lg">
+            <div class="col-xs-3">
+                <h4>Pos.</h4>
+                <h3>{{player.position}}</h3>
+            </div>
+            <div class="col-xs-3">
+                <h4>B/T</h4>
+                <h3>{{player.batsthrows}}</h3>
+            </div>
+            <div class="col-xs-3">
+                <h4>Ht.</h4>
+                <h3>{{player.height}}</h3>
+            </div>
+            <div class="col-xs-3">
+                <h4>Wt.</h4>
+                <h3>{{player.weight}}</h3>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
 
-{% block main %}
-    <div class="row text-center scoreboard">
-        <div class="col-xs-3">
-            <h4>Position</h4>
-            <h3>{{player.position}}</h3>
-        </div>
-        <div class="col-xs-3">
-            <h4>Hand</h4>
-            <h3>{{player.batsthrows}}</h3>
-        </div>
-        <div class="col-xs-3">
-            <h4>Height</h4>
-            <h3>{{player.height}}</h3>
-        </div>
-        <div class="col-xs-3">
-            <h4>Weight</h4>
-            <h3>{{player.weight}}</h3>
-        </div>
-    </div>
+
+  <!--  
         <ul>
             <li>Number: {{player.number}}</li>
             <li>Position: {{player.position}}</li> 
@@ -36,4 +63,4 @@
             <li>Date of Birth: {{player.birthday}}</li>
         </ul>
     </div>
-{% endblock %}
+    -->

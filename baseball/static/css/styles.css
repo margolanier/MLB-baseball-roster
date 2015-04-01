@@ -6,6 +6,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'collegiate';
+    src: url('../fonts/character-collegiate-outline/collegiateHeavyOutline.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
 	padding: 70px;
 	font-family: 'Quattrocento Sans', sans-serif;
@@ -113,22 +120,41 @@ li a {
 	text-align: center;
 }
 
+.right {
+	text-align: right;
+}
+
 .main-div {
 	background: white;
 	border: solid 1px #e7e7e7;
 }
 
-.scoreboard {
-	content: "";
- 	background: url(../img/scoreboard.png);
- 	width: 400px;
- 	height: 350px;
- 	background-size: contain;
- 	background-repeat: no-repeat;
- 	padding-top: 85px;
- }
-
 .player {
-	width: 250px;
+  width: 250px;
+  display: block;
+}
+
+@media screen and (max-width: 500px) {
+	.player {
+	  width: 150px;
+	}
+}
+
+.player-header img {
+  width: 200px;
+}
+
+.player-name {
+  font-family: 'fontry', Tahoma, Arial, sans-serif;
+  font-size: 3.5em;
+  color: #d11212;
+  display: inline-block;
+}
+
+.player-number {
+	font-family: 'collegiate', 'fontry', Tahoma, Arial, sans-serif;
+	font-size: 5.5em;
+	margin-right: 25px;
+	display: inline-block;
 }
 

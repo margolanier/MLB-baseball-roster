@@ -23,17 +23,6 @@
     <h2>Teams</h2>
     <ul class="striped-list">
     	{% for team in teams %}
-            <li><a href="{{ team.linkToRoster }}" target="blank"><img src="{{ team.logo }}" alt="{{ team.name }}" class="logoTeaser" >{{ team.name }}</a></li>
+            <li><a href="{{ team.linkToRoster }}"><img src="{{ team.logo }}" alt="{{ team.name }}" class="logoTeaser" >{{ team.name }}</a></li>
         {% endfor %}
-
-        <!--<li><a href="http://orioles.mlb.com/team/roster_active.jsp?c_id=bal" title="Baltimore Orioles" target="blank"><img src="http://mlb.mlb.com/mlb/images/team_logos/logo_bal_79x76.jpg" alt="Baltimore Orioles" class="logoTeaser">Baltimore Orioles</a></li>-->
-    
-    <!-- alt. way to list teams in hyperlink 
-    <ul>
-        {% for team in teams %}
-            <li><a href="{% url 'team' team.id %}">{{ team.name }}</a></li>
-        {% endfor %}
-    </ul>
-    -->
-
 {% endblock %}
