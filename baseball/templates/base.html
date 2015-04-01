@@ -23,7 +23,7 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="{% url 'home' %}">MLB Baseball</a>
+	      <a class="navbar-brand" href="{% url 'home' %}">MLB Baseball 2015</a>
 	    </div>
 
 	    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -48,10 +48,10 @@
 	<div class="container-fluid main-div">
 		<div class="row">
 			{% block content %}{% endblock %}
-			<div class="col-md-4 col-sm-12">
+			<div class="col-md-4 col-sm-6 col-xs-12">
 				{% block sidebar %}{% endblock %}
 			</div>
-			<div class="col-md-8 col-sm-12">
+			<div class="col-md-8 col-sm-6 col-xs-12">
 				{% block main %}{% endblock %}
 			</div>
 		</div><!-- row -->

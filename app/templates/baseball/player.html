@@ -1,22 +1,39 @@
 {% extends 'base.html' %}
+{% load static from staticfiles %}
 
-{% block content %}
+{% block sidebar %}
+<div class="row text-center">
+    <img src="{{player.image}}" alt="{{player.name}}" class="player" />
     <h2>{{player.name}}</h2>
-    <img src="http://www.escambia.k12.fl.us/schscnts/that/athletics/Baseball/scoreboard%20copy.png">
-    <div class="row">
-        <div class="col-md-5 col-sm-12">
-            <img src="{{player.image}}" alt="{{player.name}}" class="player" />
+</div>
+{% endblock %}
+
+{% block main %}
+    <div class="row text-center scoreboard">
+        <div class="col-xs-3">
+            <h4>Position</h4>
+            <h3>{{player.position}}</h3>
         </div>
-        <div class="col-md-7 col-sm-12">
-            <ul>
-            	<li>Number: {{player.number}}</li>
-            	<li>Position: {{player.position}}</li> 
-            	<li>B/T: {{player.batsthrows}}</li>
-            	<li>Height: {{player.height}}</li>
-            	<li>Weight: {{player.weight}}</li>
-            	<li>Date of Birth: {{player.birthday}}</li>
-            </ul>
+        <div class="col-xs-3">
+            <h4>Hand</h4>
+            <h3>{{player.batsthrows}}</h3>
+        </div>
+        <div class="col-xs-3">
+            <h4>Height</h4>
+            <h3>{{player.height}}</h3>
+        </div>
+        <div class="col-xs-3">
+            <h4>Weight</h4>
+            <h3>{{player.weight}}</h3>
         </div>
     </div>
-
-{% endblock content %}
+        <ul>
+            <li>Number: {{player.number}}</li>
+            <li>Position: {{player.position}}</li> 
+            <li>Hand: {{player.batsthrows}}</li>
+            <li>Height: {{player.height}}</li>
+            <li>Weight: {{player.weight}}</li>
+            <li>Date of Birth: {{player.birthday}}</li>
+        </ul>
+    </div>
+{% endblock %}

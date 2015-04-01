@@ -1,7 +1,26 @@
 {% extends "base.html" %}
 
-{% block content %}
-    <h2>Atlanta Braves Roster</h2>
+{% block sidebar %}
+<div class="row text-center">
+    <h2>Atlanta Braves</h2>
+    <p>America's Team</p>
+    <hr>
+    <img src="http://i986.photobucket.com/albums/ae347/And1Renders/Baseball%20Renders/Team%20Logos/psd_1247504498.png" class="center" width="200px">
+    <hr>
+</div>
+<div class="row">
+    <ul>
+        <li>Oldest continuously playing team in major North American sports.</li>
+        <li>Based in: Atlanta, Georgia</li>
+        <li>Ballpark: Turner Field</li>
+        <li>World Series Titles: 3</li>
+        <li>Manager: Fredi González</li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block main %}
+    <h2>Roster</h2>
     <ul class="striped-list">
         {% for player in players %}
             <li><a href="{% url 'player' player.id %}"><div class="number-icon">{{ player.number }}</div>{{ player.name }}</a></li>

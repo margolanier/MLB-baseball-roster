@@ -1,7 +1,26 @@
 {% extends "base.html" %}
 
-{% block content %}
-    <h2>National League Teams</h2>
+{% block sidebar %}
+<div class="row text-center">
+    <h2>National League</h2>
+    <p>The National League of Professional Baseball Clubs</p>
+    <hr>
+    <img src="http://mlb.mlb.com/mlb/images/nl_75x75.png" class="center">
+    <hr>
+</div>
+<div class="row">
+    <ul>
+        <li>World's Oldest Current Professional Team Sports League.</li>
+        <li>Older of the two leagues in Major League Baseball.  </li>
+        <li>Number of Teams: 15</li>
+        <li>Founded: February 2, 1876</li>
+        <li>World Series Titles: 47</li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block main %}
+    <h2>Teams</h2>
     <ul class="striped-list">
     	{% for team in teams %}
             <li><a href="{{ team.linkToRoster }}" target="blank"><img src="{{ team.logo }}" alt="{{ team.name }}" class="logoTeaser" >{{ team.name }}</a></li>

@@ -76,9 +76,21 @@ body::after {
 
 /* misc */
 
-h1, h2, h3, h4, h5 {
-	color: #d11212;
+h1, h2, h3 {
 	font-family: 'fontry', Tahoma, Arial, sans-serif;
+}
+
+h1, h2 {
+	color: #d11212;
+}
+
+h3, h4 {
+	color: #C8C1C2;
+}
+
+h4 {
+	font-family: Tahoma, Arial, sans-serif;
+	text-transform: uppercase;
 }
 
 .row {
@@ -106,6 +118,17 @@ li a {
 	border: solid 1px #e7e7e7;
 }
 
+.scoreboard {
+	content: "";
+ 	background: url(../img/scoreboard.png);
+ 	width: 400px;
+ 	height: 350px;
+ 	background-size: contain;
+ 	background-repeat: no-repeat;
+ 	padding-top: 85px;
+ }
 
-
+.player {
+	width: 250px;
+}
 
