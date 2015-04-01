@@ -23,7 +23,7 @@
     <h2>Roster</h2>
     <ul class="striped-list">
         {% for player in players %}
-            <li><a href="{% url 'player' player.id %}"><div class="number-icon">{{ player.number }}</div>{{ player.name }}</a></li>
+            <li><a href="{% url 'player' player.id %}"><div class="number-icon">{{ player.number }}</div>{{ player.name }}</a><span class="pos">    {{ player.position }}</span></li>
         {% endfor %}
     </ul>
 {% endblock %}

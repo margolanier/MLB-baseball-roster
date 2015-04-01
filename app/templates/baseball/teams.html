@@ -1,4 +1,9 @@
 {% extends "base.html" %}
+{% load static from staticfiles %}
+
+{% block top-img %}
+<img src="{% static 'img/lineup.jpg' %}" />
+{% endblock %}
 
 {% block sidebar %}
 <div class="row text-center">
